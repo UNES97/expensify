@@ -10,6 +10,11 @@ fastify.register(cors, {
     origin: "*"
 })
 
+const db = require("./models");
+db.Connection.sync({force: false}).then(() => {
+    console.log('Synced DB');
+}); 
+
 fastify.get('/', function handler(request, reply) {
     reply.status(200).send({ message: 'HELLO ME' })
 })
