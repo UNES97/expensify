@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <h1>Dashboard</h1>
+    <h1>Not Found</h1>
 </template>
 
 <style>
