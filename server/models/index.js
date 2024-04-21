@@ -12,17 +12,16 @@ db.Connection = Connection;
 
 db.user = require("../models/user.model")(Connection, Sequelize);
 db.category = require("../models/category.model")(Connection, Sequelize)
-db.transactions = require("../models/transactions.model")(Connection, Sequelize)
+db.transaction = require("./transaction.model")(Connection, Sequelize)
 
-db.transactions.belongsTo(db.user, {
+db.transaction.belongsTo(db.user, {
     foreignKey: { name:'user_id', allowNull: false },
     as: "user",
 });
-db.transactions.belongsTo(db.category, {
+db.transaction.belongsTo(db.category, {
     foreignKey: { name:'category_id', allowNull: false },
     as: "category",
 });
-
 
 
 const catData = [
