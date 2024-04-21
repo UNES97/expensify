@@ -15,6 +15,9 @@ db.Connection.sync({force: false}).then(() => {
     console.log('Synced DB');
 }); 
 
+fastify.register(require('./routes/auth.routes') , {prefix: 'api'})
+fastify.register(require('./routes/transaction.routes') , {prefix: 'api'})
+
 fastify.get('/', function handler(request, reply) {
     reply.status(200).send({ message: 'HELLO ME' })
 })
