@@ -5,7 +5,6 @@ const { statusCodes } = require("../utils");
 const createTransaction = async (req, reply) => {
     try {
         const { amount, description, date, type } = req.body;
-        
         const transaction = await Transaction.create({
             amount,
             description,
@@ -30,9 +29,7 @@ const getAllTransactions = async (req, reply) => {
     try {
         const page = req.query.page ? parseInt(req.query.page) : 1;
         const limit = req.query.limit ? parseInt(req.query.limit) : 10;
-
         const offset = (page - 1) * limit;
-
         const { count, rows } = await Transaction.findAndCountAll({
             offset,
             limit,
@@ -57,7 +54,6 @@ const getAllTransactions = async (req, reply) => {
 const getTransactionById = async (req, reply) => {
     try {
         const transaction = await Transaction.findByPk(req.params.id);
-
         if (!transaction) {
             return reply.status(statusCodes.NOT_FOUND).send({
                 message: "Transaction not found",
@@ -80,7 +76,6 @@ const getTransactionById = async (req, reply) => {
 const updateTransactionById = async (req, reply) => {
     try {
         const { amount, description, date, type } = req.body;
-        
         const transaction = await Transaction.findByPk(req.params.id);
 
         if (!transaction) {
@@ -113,7 +108,6 @@ const updateTransactionById = async (req, reply) => {
 const deleteTransactionById = async (req, reply) => {
     try {
         const transaction = await Transaction.findByPk(req.params.id);
-
         if (!transaction) {
             return reply.status(statusCodes.NOT_FOUND).send({
                 message: "Transaction not found",
