@@ -1,8 +1,12 @@
 <script>
+import Menu from './components/Menu.vue'
+export default {
+    components: {Menu}
+}
 </script>
 
 <template>
-    <h1>Expensify App</h1>
+    <Menu></Menu>
     <router-view :key="$route.path"></router-view>
 </template>
 
