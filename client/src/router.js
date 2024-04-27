@@ -20,21 +20,27 @@ const routes = [
     },
     {
         path: `/signup`,
-        name: "Home",
+        name: "Signup",
         component: () => import("./views/SignUp.vue"),
-        beforeEnter: [],
+        meta: { Template: false },
     },
     {
         path: `/profile`,
         name: "Profile",
         component: () => import("./views/Profile.vue"),
-        beforeEnter: [],
+        beforeEnter: [ifAuthenticated],
     },
     {
         path: `/dashboard`,
         name: "Dashboard",
         component: () => import("./views/Dashboard.vue"),
-        beforeEnter: [],
+        beforeEnter: [ifAuthenticated],
+    },
+    {
+        path: `/transactions`,
+        name: "Transactions",
+        component: () => import("./views/Transactions.vue"),
+        beforeEnter: [ifAuthenticated],
     },
     {
         path: `/:pathMatch(.*)*`,

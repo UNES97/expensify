@@ -17,7 +17,7 @@ export default {
             localStorage.setItem('userAuthenticated', JSON.stringify(payload.accessToken));
             let authUser = parseJwt(JSON.parse(localStorage.getItem("userAuthenticated")));
             console.log(authUser);
-            window.location.assign(`/home`);
+            window.location.assign(`/dashboard`);
         },
         LOGOUT(state) {
             state.isLogged = false;

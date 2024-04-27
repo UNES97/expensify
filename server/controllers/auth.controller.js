@@ -22,18 +22,18 @@ const signin = async(req, reply) => {
 
         const passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
         if (!passwordIsValid) {
-            return reply.status(statusCodes.AUTH_TOKEN_ROLE_ERROR).send({
+            return reply.status(statusCodes.AUTH_ERROR).send({
                 accessToken: null,
                 message: "Invalid password or password",
-                statusCode: statusCodes.AUTH_TOKEN_ROLE_ERROR,
+                statusCode: statusCodes.AUTH_ERROR,
             });
         }
 
         if (!user.status) {
-            return reply.status(statusCodes.AUTH_TOKEN_ROLE_ERROR).send({
+            return reply.status(statusCodes.AUTH_ERROR).send({
                 accessToken: null,
                 message: "The account is not active",
-                statusCode: statusCodes.AUTH_TOKEN_ROLE_ERROR,
+                statusCode: statusCodes.AUTH_ERROR,
             });
         }
 
