@@ -26,7 +26,7 @@ export default {
     <div class="card">
         <Menubar :model="items">
             <template #start>
-                <img class="w-1" src="/images/logo.png" alt="Expensify" srcset="">
+                <h3 class="appLogo"><i class="pi pi-pound" style="font-weight: bold;"></i>xpnsfy.</h3>
             </template>
             <template #item="{ item, props, hasSubmenu, root }">
                 <a v-ripple class="flex align-items-center" v-bind="props.action">
@@ -46,3 +46,11 @@ export default {
     </div>
 </template>
 
+
+<style>
+.appLogo {
+    color: blueviolet;
+    margin-right: 2rem;
+    font-weight: bold;
+}
+</style>
