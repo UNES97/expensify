@@ -41,9 +41,10 @@ export default {
 </script>
 
 <template>
-    <div class="flex align-items-center justify-content-center flex-column">
-        <h1 class="appLogoLog">Xpnsfy</h1>
-        <Card class="w-full xl:w-4 px-5">
+    <div class="flex align-items-center justify-content-center flex-column mt-5 parentC">
+        <img class="w-5 md:w-3 xl:w-2" src="/images/logo-full.png" alt="Expensify" srcset="">
+        <!-- <h1 class="appLogoLog">Xpnsfy</h1> -->
+        <Card class="w-full xl:w-4 px-5 mt-5">
             <template #title>
                 <h3 class="text-center">Login to your Account</h3>
             </template>

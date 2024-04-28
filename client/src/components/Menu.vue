@@ -29,7 +29,8 @@ export default {
     <div class="card">
         <Menubar :model="items">
             <template #start>
-                <h3 class="appLogo">Xpnsfy</h3>
+                <!-- <h3 class="appLogo">Xpnsfy</h3> -->
+                <img class="w-1" src="/images/logo.png" alt="Expensify" srcset="">
             </template>
             <template #item="{ item, props, hasSubmenu, root }">
                 <router-link :to="{name: item.route}" v-ripple class="flex align-items-center" v-bind="props.action">
